@@ -8,7 +8,7 @@ public class Event {
         END
     }
 
-    private int time;
+    private double time;
     private EventType eventType;
 
     public Event(int time, EventType eventType) {
@@ -16,7 +16,7 @@ public class Event {
         this.eventType = eventType;
     }
 
-    public int getTime() {
+    public double getTime() {
         return time;
     }
 

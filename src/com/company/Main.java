@@ -12,11 +12,13 @@ public class Main {
         double serverTime = 0.0;
         for(int i=0; i<serverIterations; i++) {
             EventAxis eventAxis = new EventAxis();
-            Generator server = new Generator(eventAxis, 0.5);
-            double serverOneTime = (double) server.startGenerator(eventsNumber) / serverIterations;
+            Generator server = new Generator(eventAxis, 6);
+            double serverOneTime = server.startGenerator(eventsNumber) / serverIterations;
+            double serverOneTimeEventsAverage = server.startGenerator(eventsNumber) / eventAxis.getEventsCounter();
             serverTime = serverTime + serverOneTime;
             System.out.println("ServerTIme: " + serverTime);
             System.out.println("One iteration: " + serverOneTime);
+            System.out.println("EVENT COUNTER: "+ eventAxis.getEventsCounter() + " average EVENTS :"+ serverOneTimeEventsAverage);
         }
         System.out.println("Average Time: " + serverTime / serverIterations);
     }

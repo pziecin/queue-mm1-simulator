@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Generator {
     private static int mi = 8;
+    private static int miTime = 125;
     private double lamba;
 
     private EventAxis eventAxis;
@@ -13,7 +14,7 @@ public class Generator {
         this.lamba = lamba;
     }
 
-    public int startGenerator(int eventsNumber){
+    public double startGenerator(int eventsNumber){
         for(int i=0; i<eventsNumber; i++) {
             Random randEvent = new Random();
             double condition = lamba/(mi+lamba);
@@ -26,22 +27,21 @@ public class Generator {
                 Event event = eventAxis.getEvent();
                 if(event == null)
                     continue;
-                eventAxis.updateReferenceTime(event.getTime());
+                eventAxis.updateReferenceTime(event.getTime() + generateTime(mi));
             }
         }
         return eventAxis.getReferenceTime();
     }
 
     private Event createEvent(){
-        int time = (int) generateTime();
+        int time = (int) generateTime(lamba);
         return new Event(time, Event.EventType.PAKET);
     }
 
-    private double generateTime(){
+    private double generateTime(double lamba){
         Random randomizer = new Random();
         Double randNumber = randomizer.nextDouble();
-        System.out.println("DOUBLE RAND: "+ randNumber);
-        double lamba = 0.5;
+//        System.out.println("DOUBLE RAND: "+ randNumber);
         double time = -(1/lamba)* Math.log(1-randNumber);
         System.out.println("CZAS: " + time);
         return time;
