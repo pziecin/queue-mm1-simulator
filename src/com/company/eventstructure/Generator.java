@@ -20,6 +20,9 @@ public class Generator {
             double condition = lamba/(mi+lamba);
             double whichEvent = randEvent.nextDouble();
 
+            if(i == 10000){
+                eventAxis.setReferenceTime(0);
+            }
             if(whichEvent < condition) {
                 Event event = createEvent();
                 eventAxis.putEvent(event);
@@ -29,13 +32,23 @@ public class Generator {
                     continue;
                 eventAxis.updateReferenceTime(event.getTime() + generateTime(mi));
             }
+
         }
         return eventAxis.getReferenceTime();
     }
 
     private Event createEvent(){
-        int time = (int) generateTime(lamba);
+        double time = generateTime(lamba);
+//        System.out.println("CZAS: " + time);
         return new Event(time, Event.EventType.PAKET);
+    }
+
+    public double test(int seires, double lamba){
+        double time = 0.0;
+        for(int i =0;i<100;i++) {
+            time = time + generateTime(lamba);
+        }
+        return time;
     }
 
     private double generateTime(double lamba){
@@ -43,7 +56,6 @@ public class Generator {
         Double randNumber = randomizer.nextDouble();
 //        System.out.println("DOUBLE RAND: "+ randNumber);
         double time = -(1/lamba)* Math.log(1-randNumber);
-        System.out.println("CZAS: " + time);
         return time;
     }
 }

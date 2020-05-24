@@ -11,7 +11,7 @@ public class Event {
     private double time;
     private EventType eventType;
 
-    public Event(int time, EventType eventType) {
+    public Event(double time, EventType eventType) {
         this.time = time;
         this.eventType = eventType;
     }
