@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="66ce9d4f-1880-4f66-9202-a6cb2b0e1ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/eventstructure/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/eventstructure/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/eventstructure/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/eventstructure/Generator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +78,8 @@
       <workItem from="1589129854839" duration="4824000" />
       <workItem from="1589209181271" duration="8114000" />
       <workItem from="1589386393273" duration="696000" />
-      <workItem from="1590321441870" duration="7417000" />
+      <workItem from="1590321441870" duration="8229000" />
+      <workItem from="1590588922378" duration="43000" />
     </task>
     <servers />
   </component>

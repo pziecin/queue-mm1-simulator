@@ -54,7 +54,6 @@ public class Generator {
     private double generateTime(double lamba){
         Random randomizer = new Random();
         Double randNumber = randomizer.nextDouble();
-//        System.out.println("DOUBLE RAND: "+ randNumber);
         double time = -(1/lamba)* Math.log(1-randNumber);
         return time;
     }
